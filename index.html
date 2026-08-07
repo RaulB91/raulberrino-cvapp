@@ -1212,11 +1212,6 @@ if ('serviceWorker' in navigator) {
 <body class="">
 
 <!-- TOOLBAR (nascosta — premi Ctrl+Shift+M per mostrarla) -->
-<div class="toolbar" id="toolbar">
-  <button class="btn btn-primary" id="btn-edit" onclick="startEdit()" style="display: inline-block;">Modifica CV</button>
-  <button class="btn btn-primary" id="btn-save" onclick="saveEdit()" style="display: none;">Salva CV</button>
-  <button class="btn btn-danger" id="btn-cancel" onclick="cancelEdit()" style="display: none;">Annulla modifica</button>
-</div>
 
 <div class="cv">
 
@@ -1256,6 +1251,25 @@ if ('serviceWorker' in navigator) {
           <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"></path>
           <polyline points="7,10 12,15 17,10"></polyline>
           <line x1="12" y1="15" x2="12" y2="3"></line>
+        </svg>
+      </button>
+
+      <!-- EDIT MODE ICONS -->
+      <button class="cta-btn" id="btn-edit" onclick="startEdit()" title="Modifica CV">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#5B8DC8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M11 4H4a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7"></path>
+          <path d="M18.5 2.5a2.121 2.121 0 013 3L12 15l-4 1 1-4 9.5-9.5z"></path>
+        </svg>
+      </button>
+      <button class="cta-btn" id="btn-save" onclick="saveEdit()" title="Salva" style="display:none">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#2ecc71" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="20,6 9,17 4,12"></polyline>
+        </svg>
+      </button>
+      <button class="cta-btn" id="btn-cancel" onclick="cancelEdit()" title="Annulla" style="display:none">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#e74c3c" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
         </svg>
       </button>
     </div>
@@ -2051,8 +2065,8 @@ if ('serviceWorker' in navigator) {
     document.querySelector('.cv').classList.add('editing-mode');
     document.body.classList.add('editing');
     document.getElementById('btn-edit').style.display = 'none';
-    document.getElementById('btn-save').style.display = 'inline-block';
-    document.getElementById('btn-cancel').style.display = 'inline-block';
+    document.getElementById('btn-save').style.display = 'inline-flex';
+    document.getElementById('btn-cancel').style.display = 'inline-flex';
     enableDrag();
   }
 
@@ -2061,7 +2075,7 @@ if ('serviceWorker' in navigator) {
     EDITABLES().forEach(el => { el.removeAttribute('contenteditable'); });
     document.querySelector('.cv').classList.remove('editing-mode');
     document.body.classList.remove('editing');
-    document.getElementById('btn-edit').style.display = 'inline-block';
+    document.getElementById('btn-edit').style.display = 'inline-flex';
     document.getElementById('btn-save').style.display = 'none';
     document.getElementById('btn-cancel').style.display = 'none';
     disableDrag();
@@ -2078,7 +2092,7 @@ if ('serviceWorker' in navigator) {
     });
     document.querySelector('.cv').classList.remove('editing-mode');
     document.body.classList.remove('editing');
-    document.getElementById('btn-edit').style.display = 'inline-block';
+    document.getElementById('btn-edit').style.display = 'inline-flex';
     document.getElementById('btn-save').style.display = 'none';
     document.getElementById('btn-cancel').style.display = 'none';
     disableDrag();
@@ -2355,6 +2369,13 @@ if ('serviceWorker' in navigator) {
         <div class="edu-school" data-editable contenteditable="true">Istituto / Ente</div>
         <div class="edu-date" data-editable contenteditable="true">anno – anno · Città</div>
       </div>
+    `;
+    btn.parentNode.insertBefore(newEdu, btn);
+    enableDrag();
+    newEdu.querySelector('[data-editable]').focus();
+  }
+
+</script>
 
 <div style="text-align:center; padding:32px 20px; background:#090F1E;">
   <a href="https://raulberrino-portfolio.netlify.app/" target="_blank"
