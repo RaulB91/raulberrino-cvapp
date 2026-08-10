@@ -369,9 +369,8 @@ if ('serviceWorker' in navigator) {
     line-height: 1;
     align-self: flex-start;
   }
-  .del-item-btn:hover { color: #e74c3c; }
-  .editing-mode .del-item-btn { display: inline-block; }
   @media print { .del-item-btn { display:none!important; } }
+  .editing-mode .del-item-btn { display: inline-block; }
   /* MOSTRA TUTTO / MOSTRA MENO */
   .show-more-hidden { display: none !important; }
   .editing-mode .show-more-hidden { display: block !important; }
@@ -1301,38 +1300,43 @@ if ('serviceWorker' in navigator) {
         <span class="skill-score-label">/ 10</span>
       </div>
       <div class="skill-bar-bg"><div class="skill-bar-fill" style="width:80%"></div></div>
+      <button class="del-item-btn" onclick="deleteItem(this)" title="Elimina">×</button>
       </div>
-      <div class="skill-item" draggable="false">
+<div class="skill-item" draggable="false">
         <span class="drag-handle" title="Trascina per spostare">≡</span><div class="skill-label" data-editable="">Keyword Research</div>
         <div class="skill-score-row">
         <input type="number" class="skill-score-input" min="1" max="10" value="8" oninput="updateSkillBar(this)">
         <span class="skill-score-label">/ 10</span>
       </div>
       <div class="skill-bar-bg"><div class="skill-bar-fill" style="width:80%"></div></div>
+      <button class="del-item-btn" onclick="deleteItem(this)" title="Elimina">×</button>
       </div>
-      <div class="skill-item" draggable="false">
+<div class="skill-item" draggable="false">
         <span class="drag-handle" title="Trascina per spostare">≡</span><div class="skill-label" data-editable="">Content Marketing</div>
         <div class="skill-score-row">
         <input type="number" class="skill-score-input" min="1" max="10" value="7" oninput="updateSkillBar(this)">
         <span class="skill-score-label">/ 10</span>
       </div>
       <div class="skill-bar-bg"><div class="skill-bar-fill" style="width:70%"></div></div>
+      <button class="del-item-btn" onclick="deleteItem(this)" title="Elimina">×</button>
       </div>
-      <div class="skill-item" draggable="false">
+<div class="skill-item" draggable="false">
         <span class="drag-handle" title="Trascina per spostare">≡</span><div class="skill-label" data-editable="">Google Analytics</div>
         <div class="skill-score-row">
         <input type="number" class="skill-score-input" min="1" max="10" value="6" oninput="updateSkillBar(this)">
         <span class="skill-score-label">/ 10</span>
       </div>
       <div class="skill-bar-bg"><div class="skill-bar-fill" style="width:65%"></div></div>
+      <button class="del-item-btn" onclick="deleteItem(this)" title="Elimina">×</button>
       </div>
-      <div class="skill-item" draggable="false">
+<div class="skill-item" draggable="false">
         <span class="drag-handle" title="Trascina per spostare">≡</span><div class="skill-label" data-editable="">Google Search Console</div>
         <div class="skill-score-row">
         <input type="number" class="skill-score-input" min="1" max="10" value="6" oninput="updateSkillBar(this)">
         <span class="skill-score-label">/ 10</span>
       </div>
       <div class="skill-bar-bg"><div class="skill-bar-fill" style="width:65%"></div></div>
+      <button class="del-item-btn" onclick="deleteItem(this)" title="Elimina">×</button>
       </div>
       <div class="skill-item show-more-hidden" draggable="false">
         <span class="drag-handle" title="Trascina per spostare">≡</span><div class="skill-label" data-editable="">WordPress / WooCommerce</div>
@@ -1341,6 +1345,7 @@ if ('serviceWorker' in navigator) {
         <span class="skill-score-label">/ 10</span>
       </div>
       <div class="skill-bar-bg"><div class="skill-bar-fill" style="width:60%"></div></div>
+      <button class="del-item-btn" onclick="deleteItem(this)" title="Elimina">×</button>
       </div>
       <div class="skill-item show-more-hidden" draggable="false">
         <span class="drag-handle" title="Trascina per spostare">≡</span><div class="skill-label" data-editable="">E-Commerce &amp; Amazon</div>
@@ -1349,6 +1354,7 @@ if ('serviceWorker' in navigator) {
         <span class="skill-score-label">/ 10</span>
       </div>
       <div class="skill-bar-bg"><div class="skill-bar-fill" style="width:65%"></div></div>
+      <button class="del-item-btn" onclick="deleteItem(this)" title="Elimina">×</button>
       </div>
 
       <div class="skill-item show-more-hidden" draggable="false">
@@ -1358,6 +1364,8 @@ if ('serviceWorker' in navigator) {
         <span class="skill-score-label">/ 10</span>
       </div>
       <div class="skill-bar-bg"><div class="skill-bar-fill" style="width:80%"></div></div>
+      <button class="del-item-btn" onclick="deleteItem(this)" title="Elimina">×</button>
+      
     </div>
 <div class="skill-item show-more-hidden" draggable="false">
         <span class="drag-handle" title="Trascina per spostare">≡</span><div class="skill-label" data-editable="">Semrush</div>
@@ -1366,6 +1374,8 @@ if ('serviceWorker' in navigator) {
         <span class="skill-score-label">/ 10</span>
       </div>
       <div class="skill-bar-bg"><div class="skill-bar-fill" style="width:70%"></div></div>
+      <button class="del-item-btn" onclick="deleteItem(this)" title="Elimina">×</button>
+      
     </div>
 <div class="skill-item show-more-hidden" draggable="false">
         <span class="drag-handle" title="Trascina per spostare">≡</span><div class="skill-label" data-editable="">Google Tag Manager</div>
@@ -1374,6 +1384,8 @@ if ('serviceWorker' in navigator) {
         <span class="skill-score-label">/ 10</span>
       </div>
       <div class="skill-bar-bg"><div class="skill-bar-fill" style="width:60%"></div></div>
+      <button class="del-item-btn" onclick="deleteItem(this)" title="Elimina">×</button>
+      
     </div>
       <div class="skill-item show-more-hidden" draggable="false">
         <span class="drag-handle" title="Trascina per spostare">≡</span><div class="skill-label" data-editable="">HTML5 / CSS3</div>
@@ -1382,6 +1394,8 @@ if ('serviceWorker' in navigator) {
         <span class="skill-score-label">/ 10</span>
       </div>
       <div class="skill-bar-bg"><div class="skill-bar-fill" style="width:60%"></div></div>
+      <button class="del-item-btn" onclick="deleteItem(this)" title="Elimina">×</button>
+      
     </div>      <div class="skill-item show-more-hidden" draggable="false">
         <span class="drag-handle" title="Trascina per spostare">≡</span><div class="skill-label" data-editable="">JavaScript (base SEO)</div>
       <div class="skill-score-row">
@@ -1389,6 +1403,8 @@ if ('serviceWorker' in navigator) {
         <span class="skill-score-label">/ 10</span>
       </div>
       <div class="skill-bar-bg"><div class="skill-bar-fill" style="width:40%"></div></div>
+      <button class="del-item-btn" onclick="deleteItem(this)" title="Elimina">×</button>
+      
     </div>      <div class="skill-item show-more-hidden" draggable="false">
         <span class="drag-handle" title="Trascina per spostare">≡</span><div class="skill-label" data-editable="">Python (base - automazione)</div>
       <div class="skill-score-row">
@@ -1396,6 +1412,8 @@ if ('serviceWorker' in navigator) {
         <span class="skill-score-label">/ 10</span>
       </div>
       <div class="skill-bar-bg"><div class="skill-bar-fill" style="width:40%"></div></div>
+      <button class="del-item-btn" onclick="deleteItem(this)" title="Elimina">×</button>
+      
     </div>
       <div class="skill-item show-more-hidden" draggable="false">
         <span class="drag-handle" title="Trascina per spostare">≡</span><div class="skill-label" data-editable="">Google Ads</div>
@@ -1404,6 +1422,8 @@ if ('serviceWorker' in navigator) {
         <span class="skill-score-label">/ 10</span>
       </div>
       <div class="skill-bar-bg"><div class="skill-bar-fill" style="width:30%"></div></div>
+      <button class="del-item-btn" onclick="deleteItem(this)" title="Elimina">×</button>
+      
     </div>      <div class="skill-item show-more-hidden" draggable="false">
         <span class="drag-handle" title="Trascina per spostare">≡</span><div class="skill-label" data-editable="">Meta Ads Manager</div>
       <div class="skill-score-row">
@@ -1411,6 +1431,8 @@ if ('serviceWorker' in navigator) {
         <span class="skill-score-label">/ 10</span>
       </div>
       <div class="skill-bar-bg"><div class="skill-bar-fill" style="width:30%"></div></div>
+      <button class="del-item-btn" onclick="deleteItem(this)" title="Elimina">×</button>
+      
     </div>      <div class="skill-item show-more-hidden" draggable="false">
         <span class="drag-handle" title="Trascina per spostare">≡</span><div class="skill-label" data-editable="">Amazon Advertising (PPC)</div>
       <div class="skill-score-row">
@@ -1418,6 +1440,8 @@ if ('serviceWorker' in navigator) {
         <span class="skill-score-label">/ 10</span>
       </div>
       <div class="skill-bar-bg"><div class="skill-bar-fill" style="width:40%"></div></div>
+      <button class="del-item-btn" onclick="deleteItem(this)" title="Elimina">×</button>
+      
     </div>      <div class="skill-item show-more-hidden" draggable="false">
         <span class="drag-handle" title="Trascina per spostare">≡</span><div class="skill-label" data-editable="">Looker Studio</div>
       <div class="skill-score-row">
@@ -1425,6 +1449,8 @@ if ('serviceWorker' in navigator) {
         <span class="skill-score-label">/ 10</span>
       </div>
       <div class="skill-bar-bg"><div class="skill-bar-fill" style="width:30%"></div></div>
+      <button class="del-item-btn" onclick="deleteItem(this)" title="Elimina">×</button>
+      
     </div>      <div class="skill-item show-more-hidden" draggable="false">
         <span class="drag-handle" title="Trascina per spostare">≡</span><div class="skill-label" data-editable="">Hotjar / Microsoft Clarity</div>
       <div class="skill-score-row">
@@ -1432,6 +1458,8 @@ if ('serviceWorker' in navigator) {
         <span class="skill-score-label">/ 10</span>
       </div>
       <div class="skill-bar-bg"><div class="skill-bar-fill" style="width:30%"></div></div>
+      <button class="del-item-btn" onclick="deleteItem(this)" title="Elimina">×</button>
+      
     </div>      <div class="skill-item show-more-hidden" draggable="false">
         <span class="drag-handle" title="Trascina per spostare">≡</span><div class="skill-label" data-editable="">A/B Testing (CRO)</div>
       <div class="skill-score-row">
@@ -1439,6 +1467,8 @@ if ('serviceWorker' in navigator) {
         <span class="skill-score-label">/ 10</span>
       </div>
       <div class="skill-bar-bg"><div class="skill-bar-fill" style="width:20%"></div></div>
+      <button class="del-item-btn" onclick="deleteItem(this)" title="Elimina">×</button>
+      
     </div>      <div class="skill-item show-more-hidden" draggable="false">
         <span class="drag-handle" title="Trascina per spostare">≡</span><div class="skill-label" data-editable="">GEO &amp; AEO</div>
       <div class="skill-score-row">
@@ -1446,6 +1476,8 @@ if ('serviceWorker' in navigator) {
         <span class="skill-score-label">/ 10</span>
       </div>
       <div class="skill-bar-bg"><div class="skill-bar-fill" style="width:40%"></div></div>
+      <button class="del-item-btn" onclick="deleteItem(this)" title="Elimina">×</button>
+      
     </div>      <div class="skill-item show-more-hidden" draggable="false">
         <span class="drag-handle" title="Trascina per spostare">≡</span><div class="skill-label" data-editable="">Make / n8n (Automazioni)</div>
       <div class="skill-score-row">
@@ -1453,6 +1485,8 @@ if ('serviceWorker' in navigator) {
         <span class="skill-score-label">/ 10</span>
       </div>
       <div class="skill-bar-bg"><div class="skill-bar-fill" style="width:30%"></div></div>
+      <button class="del-item-btn" onclick="deleteItem(this)" title="Elimina">×</button>
+      
     </div>      <div class="skill-item show-more-hidden" draggable="false">
         <span class="drag-handle" title="Trascina per spostare">≡</span><div class="skill-label" data-editable="">Screaming Frog / Sitebulb</div>
       <div class="skill-score-row">
@@ -1460,6 +1494,8 @@ if ('serviceWorker' in navigator) {
         <span class="skill-score-label">/ 10</span>
       </div>
       <div class="skill-bar-bg"><div class="skill-bar-fill" style="width:30%"></div></div>
+      <button class="del-item-btn" onclick="deleteItem(this)" title="Elimina">×</button>
+      
     </div>      <div class="skill-item show-more-hidden" draggable="false">
         <span class="drag-handle" title="Trascina per spostare">≡</span><div class="skill-label" data-editable="">Ahrefs / Sistrix</div>
       <div class="skill-score-row">
@@ -1467,6 +1503,8 @@ if ('serviceWorker' in navigator) {
         <span class="skill-score-label">/ 10</span>
       </div>
       <div class="skill-bar-bg"><div class="skill-bar-fill" style="width:40%"></div></div>
+      <button class="del-item-btn" onclick="deleteItem(this)" title="Elimina">×</button>
+      
     </div><button class="show-more-btn" data-header="Competenze digitali" data-selector=".skill-item" data-limit="5" data-expanded="false">Mostra tutto (18 in più)</button>
       <button class="add-btn" onclick="addSkill('digital')">+</button>
 
@@ -1475,6 +1513,7 @@ if ('serviceWorker' in navigator) {
         <h2>Competenze tecniche</h2>
       </div>
 
+
       <div class="skill-item" draggable="false">
         <span class="drag-handle" title="Trascina per spostare">≡</span><div class="skill-label" data-editable="">AutoCAD 2D/3D</div>
         <div class="skill-score-row">
@@ -1482,33 +1521,37 @@ if ('serviceWorker' in navigator) {
         <span class="skill-score-label">/ 10</span>
       </div>
       <div class="skill-bar-bg"><div class="skill-bar-fill" style="width:90%"></div></div>
+      <button class="del-item-btn" onclick="deleteItem(this)" title="Elimina">×</button>
       </div>
-      <div class="skill-item" draggable="false">
+<div class="skill-item" draggable="false">
         <span class="drag-handle" title="Trascina per spostare">≡</span><div class="skill-label" data-editable="">Inventor / SolidWorks</div>
         <div class="skill-score-row">
         <input type="number" class="skill-score-input" min="1" max="10" value="8" oninput="updateSkillBar(this)">
         <span class="skill-score-label">/ 10</span>
       </div>
       <div class="skill-bar-bg"><div class="skill-bar-fill" style="width:80%"></div></div>
+      <button class="del-item-btn" onclick="deleteItem(this)" title="Elimina">×</button>
       </div>
-      <div class="skill-item" draggable="false">
+<div class="skill-item" draggable="false">
         <span class="drag-handle" title="Trascina per spostare">≡</span><div class="skill-label" data-editable="">Rhinoceros</div>
         <div class="skill-score-row">
         <input type="number" class="skill-score-input" min="1" max="10" value="7" oninput="updateSkillBar(this)">
         <span class="skill-score-label">/ 10</span>
       </div>
       <div class="skill-bar-bg"><div class="skill-bar-fill" style="width:70%"></div></div>
+      <button class="del-item-btn" onclick="deleteItem(this)" title="Elimina">×</button>
       </div>
-      <div class="skill-item" draggable="false">
+<div class="skill-item" draggable="false">
         <span class="drag-handle" title="Trascina per spostare">≡</span><div class="skill-label" data-editable="">Word · Excel · Office 365</div>
         <div class="skill-score-row">
         <input type="number" class="skill-score-input" min="1" max="10" value="8" oninput="updateSkillBar(this)">
         <span class="skill-score-label">/ 10</span>
       </div>
       <div class="skill-bar-bg"><div class="skill-bar-fill" style="width:85%"></div></div>
+      <button class="del-item-btn" onclick="deleteItem(this)" title="Elimina">×</button>
       </div>
 
-            <div class="section-divider" draggable="false">
+      <div class="section-divider" draggable="false">
         <div class="divider-top-row">
           <span class="drag-handle" title="Trascina per spostare">≡</span>
           <div class="divider-line">
@@ -1524,6 +1567,8 @@ if ('serviceWorker' in navigator) {
         <span class="skill-score-label">/ 10</span>
       </div>
       <div class="skill-bar-bg"><div class="skill-bar-fill" style="width:20%"></div></div>
+      <button class="del-item-btn" onclick="deleteItem(this)" title="Elimina">×</button>
+      
     </div>      <div class="skill-item non-pertinente-hidden" draggable="false">
         <span class="drag-handle" title="Trascina per spostare">≡</span><div class="skill-label" data-editable="">JSON-LD / Schema.org</div>
       <div class="skill-score-row">
@@ -1531,6 +1576,8 @@ if ('serviceWorker' in navigator) {
         <span class="skill-score-label">/ 10</span>
       </div>
       <div class="skill-bar-bg"><div class="skill-bar-fill" style="width:30%"></div></div>
+      <button class="del-item-btn" onclick="deleteItem(this)" title="Elimina">×</button>
+      
     </div>
       <button class="add-btn" onclick="addSkill('tech')">+</button>
 
@@ -1765,7 +1812,7 @@ if ('serviceWorker' in navigator) {
           <div class="edu-school" data-editable="">Digital Coach · digital-coach.com</div>
           <div class="edu-date" data-editable="">feb 2026 – in corso · Italia</div>
         </div>
-        <button class="del-item-btn" onclick="deleteItem(this)" title="Elimina">×</button>
+        
       </div>
       <div class="edu-item" draggable="false">
         <span class="drag-handle" title="Trascina per spostare">≡</span><div class="edu-dot"></div>
@@ -1774,7 +1821,7 @@ if ('serviceWorker' in navigator) {
           <div class="edu-school" data-editable="">ENAIP Treviso</div>
           <div class="edu-date" data-editable="">2017 · Treviso, Italia</div>
         </div>
-        <button class="del-item-btn" onclick="deleteItem(this)" title="Elimina">×</button>
+        
       </div><div class="section-divider" draggable="false">
         <div class="divider-top-row">
           <span class="drag-handle" title="Trascina per spostare">≡</span>
@@ -1790,7 +1837,7 @@ if ('serviceWorker' in navigator) {
           <div class="edu-school" data-editable="">Gi Group · Italia</div>
           <div class="edu-date" data-editable="">lug 2021 – ago 2021</div>
         </div>
-        <button class="del-item-btn" onclick="deleteItem(this)" title="Elimina">×</button>
+        
       </div>
       
       
@@ -1802,7 +1849,7 @@ if ('serviceWorker' in navigator) {
           <div class="edu-school" data-editable="">Atena S.p.A · Treviso</div>
           <div class="edu-date" data-editable="">giu 2016 – lug 2016</div>
         </div>
-        <button class="del-item-btn" onclick="deleteItem(this)" title="Elimina">×</button>
+        
       </div>
       <div class="edu-item non-pertinente-hidden" draggable="false">
         <span class="drag-handle" title="Trascina per spostare">≡</span><div class="edu-dot"></div>
@@ -1811,7 +1858,7 @@ if ('serviceWorker' in navigator) {
           <div class="edu-school" data-editable="">UmanaForma · Murano (VE)</div>
           <div class="edu-date" data-editable="">mag 2016 – giu 2016</div>
         </div>
-        <button class="del-item-btn" onclick="deleteItem(this)" title="Elimina">×</button>
+        
       </div>
       <div class="edu-item non-pertinente-hidden" draggable="false">
         <span class="drag-handle" title="Trascina per spostare">≡</span><div class="edu-dot"></div>
@@ -1820,7 +1867,7 @@ if ('serviceWorker' in navigator) {
           <div class="edu-school" data-editable="">C.F.P. di San Donà di Piave</div>
           <div class="edu-date" data-editable="">mag 2011 – lug 2011</div>
         </div>
-        <button class="del-item-btn" onclick="deleteItem(this)" title="Elimina">×</button>
+        
       </div>
       <div class="edu-item non-pertinente-hidden" draggable="false">
         <span class="drag-handle" title="Trascina per spostare">≡</span><div class="edu-dot"></div>
@@ -1829,7 +1876,7 @@ if ('serviceWorker' in navigator) {
           <div class="edu-school" data-editable="">C.F.P. di San Donà di Piave</div>
           <div class="edu-date" data-editable="">mar 2011 – mag 2011</div>
         </div>
-        <button class="del-item-btn" onclick="deleteItem(this)" title="Elimina">×</button>
+        
       </div>
       <div class="edu-item non-pertinente-hidden" draggable="false">
         <span class="drag-handle" title="Trascina per spostare">≡</span><div class="edu-dot"></div>
@@ -1838,7 +1885,7 @@ if ('serviceWorker' in navigator) {
           <div class="edu-school" data-editable="">IPSIA E. Mattei</div>
           <div class="edu-date" data-editable="">2008 – 2010 · San Stino di Livenza (VE)</div>
         </div>
-        <button class="del-item-btn" onclick="deleteItem(this)" title="Elimina">×</button>
+        
       </div>
       <div class="edu-item non-pertinente-hidden" draggable="false">
         <span class="drag-handle" title="Trascina per spostare">≡</span><div class="edu-dot"></div>
@@ -1847,7 +1894,7 @@ if ('serviceWorker' in navigator) {
           <div class="edu-school" data-editable="">C.n.o.s. F.a.p. Don Bosco · San Donà di Piave</div>
           <div class="edu-date" data-editable="">set 2005 – giu 2008</div>
         </div>
-        <button class="del-item-btn" onclick="deleteItem(this)" title="Elimina">×</button>
+        
       </div>
       <button class="add-btn" onclick="addEducation()">+</button>
 
@@ -2292,6 +2339,7 @@ if ('serviceWorker' in navigator) {
         <span class="skill-score-label">/ 10</span>
       </div>
       <div class="skill-bar-bg"><div class="skill-bar-fill" style="width:50%"></div></div>
+      
     `;
     btn.parentNode.insertBefore(newSkill, btn);
     enableDrag();
