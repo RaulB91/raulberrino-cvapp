@@ -1977,6 +1977,35 @@ if ('serviceWorker' in navigator) {
     });
   }
 
+  // Corregge i testi dei divisori di sezione (es. "non pertinente" ->
+  // "altre esperienze") anche se una versione più vecchia era rimasta
+  // salvata in cache locale o su Supabase da prima di questa modifica.
+  function rbRepairDividerLabels(cv) {
+    const labelMap = {
+      'competenze digitali': 'altre competenze',
+      'competenze tecniche': 'altre competenze',
+      'esperienza lavorativa': 'altre esperienze',
+      'formazione': 'altre formazioni'
+    };
+    const nodes = cv.querySelectorAll('.section-title h2, .section-divider .divider-label');
+    let currentSection = '';
+    nodes.forEach(node => {
+      if (node.tagName === 'H2') {
+        currentSection = node.textContent.trim().toLowerCase();
+      } else {
+        const desired = labelMap[currentSection];
+        if (desired && node.textContent.trim() !== desired) {
+          node.textContent = desired;
+        }
+      }
+    });
+  }
+
+  function rbRunAllRepairs(cv) {
+    rbRepairEditableFixups(cv);
+    rbRepairDividerLabels(cv);
+  }
+
   function loadHTML() {
     const cv = document.querySelector('.cv');
     if (!cv) return;
@@ -1986,7 +2015,7 @@ if ('serviceWorker' in navigator) {
       const cached = localStorage.getItem(RB_CV_STORAGE_KEY);
       if (cached && cached.length >= RB_CV_MIN_VALID_LENGTH) {
         cv.innerHTML = cached;
-        rbRepairEditableFixups(cv);
+        rbRunAllRepairs(cv);
       } else if (cached) {
         // Contenuto troppo corto per essere un CV reale: lo scarto
         console.warn('Contenuto in localStorage scartato perché troppo corto/non valido.');
@@ -2010,7 +2039,7 @@ if ('serviceWorker' in navigator) {
           }
           if (data && data.content && data.content.length >= RB_CV_MIN_VALID_LENGTH) {
             cv.innerHTML = data.content;
-            rbRepairEditableFixups(cv);
+            rbRunAllRepairs(cv);
             try { localStorage.setItem(RB_CV_STORAGE_KEY, data.content); } catch (e) {}
             // Ri-applica gli stati visivi dopo il ripristino da remoto
             initNonPertinente();
